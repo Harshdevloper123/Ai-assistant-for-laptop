@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naukar Text Assistant</title>
+    <link rel="stylesheet" href="text.css">
+</head>
+<body>
+<h1>Under Construction</h1>
+<div class="search">
+    <div class="messageBox">
+        <input required="" placeholder="Search..." type="text" id="messageInput"/>
+        <button id="sendButton">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 664 663">
+                <path
+                    fill="none"
+                    d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888"
+                ></path>
+                <path
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                    stroke-width="33.67"
+                    stroke="#6c6c6c"
+                    d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888"
+                ></path>
+            </svg>
+        </button>
+    </div>
+</div>
+
+<div id="results" style="background: transparent;"></div>
+
+<script>
+    document.getElementById('sendButton').addEventListener('click', function() {
+        var query = document.getElementById('messageInput').value;
+        if (query) {
+            var url = 'https://www.google.com/search?q=' + encodeURIComponent(query);
+            window.open(url, '_blank');
+        }
+    });
+
+    window.addEventListener('load', function() {
+        var backButton = document.createElement('button');
+        backButton.textContent = 'Back';
+        backButton.onclick = function() {
+            window.history.back();
+        };
+       
+    });
+</script>
+</body>
+</html>
